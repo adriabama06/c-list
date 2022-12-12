@@ -57,6 +57,23 @@ public:
         return nullptr;
     }
 
+    node_t* Get(unsigned int index)
+    {
+        node_t* temp = head;
+
+        for(unsigned int i = 0; temp != nullptr; i++)
+        {
+            if(i == index)
+            {
+                return temp;
+            }
+
+            temp = temp->next;
+        }
+
+        return nullptr;
+    }
+
     // Remove last element
     void Remove()
     {
@@ -86,6 +103,11 @@ public:
         // if has_found = 1;
         // temp => 1 position before value you like find
 
+        if(!has_found)
+        {
+            return;
+        }
+
         node_t* objective = temp->next;
 
         temp->next = objective->next; // => temp->next = temp->next->next;
@@ -93,14 +115,41 @@ public:
         delete objective;
     }
 
-    LinkedList(/* args */)
+    void RemoveIndex(unsigned int index)
     {
+        if(index == 0)
+        {
+            Remove();
+            return;
+        }
 
-    }
+        node_t* temp = head;
+        int has_found = 0;
 
-    ~LinkedList()
-    {
-        Clear();
+        for(unsigned int i = 0; temp != nullptr; i++)
+        {
+            if(temp->next != nullptr && (i+1) == index)
+            {
+                has_found = 1;
+                break;
+            }
+
+            temp = temp->next;
+        }
+
+        // if has_found = 1;
+        // temp => 1 position before value you like find
+
+        if(!has_found)
+        {
+            return;
+        }
+
+        node_t* objective = temp->next;
+
+        temp->next = objective->next; // => temp->next = temp->next->next;
+
+        delete objective;
     }
 
     void Clear()
@@ -109,6 +158,14 @@ public:
         {
             Remove();
         }
+    }
+
+    // On create don't need any
+    LinkedList() {}
+
+    ~LinkedList()
+    {
+        Clear();
     }
 
     friend std::ostream& operator<<(std::ostream& os, LinkedList const& object)

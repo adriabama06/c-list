@@ -15,6 +15,8 @@ int main()
 
     cout << myList << endl;
 
+
+
     cout << "Add 50 after 7" << endl;
 
     myList.AddAfter(
@@ -24,11 +26,27 @@ int main()
 
     cout << myList << endl;
 
+
+
     cout << "Remove 50" << endl;
 
     myList.Remove(50);
 
     cout << myList << endl;
+
+
+
+    cout << "Remove element at index 3 (" << myList.Get(2)->value << ")" << endl;
+    
+    /*
+    Elements: [x, x, x, x, x]
+    Index:     0, 1, 2, 3, 4
+    */
+    myList.RemoveIndex(2);
+
+    cout << myList << endl;
+
+
 
     cout << "Clear all nodes" << endl;
 
