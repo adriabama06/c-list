@@ -19,7 +19,7 @@ int main()
 
     cout << "Add 50 after 7" << endl;
 
-    myList.AddAfter(
+    myList.InsertAfter(
         myList.Find(7),
         myList.CreateNode(50)
     );

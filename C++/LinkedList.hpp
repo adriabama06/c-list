@@ -17,7 +17,7 @@ public:
         node_t* new_node = new node_t;
 
         new_node->value = value;
-        new_node->next = NULL;
+        new_node->next = nullptr;
 
         return new_node;
     }
@@ -34,7 +34,7 @@ public:
         Insert(new_node);
     }
 
-    void AddAfter(node_t* node_after, node_t* to_insert)
+    void InsertAfter(node_t* node_after, node_t* to_insert)
     {
         to_insert->next = node_after->next;
         node_after->next = to_insert;
