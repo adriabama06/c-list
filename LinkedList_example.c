@@ -56,7 +56,7 @@ int main()
 
 
 
-    printf("Remove element at index 3 (%d)\n", *(unsigned int*) Get(head, 2)->value);
+    printf("Remove element at index 3 (for human, 2 for programing array) (%d)\n", *(unsigned int*) Get(head, 2)->value);
 
     /*
     Elements: [x, x, x, x, x]
