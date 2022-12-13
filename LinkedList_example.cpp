@@ -36,7 +36,7 @@ int main()
 
 
 
-    cout << "Remove element at index 3 (" << myList.Get(2)->value << ")" << endl;
+    cout << "Remove element at index 3 (for human, 2 for programing array) (" << myList.Get(2)->value << ")" << endl;
     
     /*
     Elements: [x, x, x, x, x]
